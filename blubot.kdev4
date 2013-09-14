@@ -1,0 +1,4 @@
+[Project]
+Name=blubot
+Manager=KDevCMakeManager
+VersionControl=kdevgit
