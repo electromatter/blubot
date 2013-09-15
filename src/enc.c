@@ -62,7 +62,7 @@ void enc_reset(void) {
 
 static void pinchange(void)
 {
-	//Atomicly read pind pinb 
+	/*Atomicly read pind pinb*/
 	char t = ((PIND << 6) & 0xC0) | ((PINB >> 2) & 0x3F);
 	
 	last[0] = ((t >> 6) & 0x03) | (last[0] << 2);

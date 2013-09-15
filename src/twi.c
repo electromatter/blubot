@@ -26,7 +26,6 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <compat/twi.h>
-//#include "Arduino.h" // for digitalWrite
 
 #define TRUE (1)
 #define FALSE (0)

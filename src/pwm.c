@@ -43,7 +43,8 @@ void pwm_timer(void)
 			return;
 		if(off >= 14) {
 			off = 0;
-			UDR0 = ptr[0][off++];
+			if(enable)
+				UDR0 = ptr[0][off++];
 		} else {
 			ptr[1] = ptr[0];
 		}
@@ -88,7 +89,8 @@ void pwm_set(char *val)
 		} else {
 			ptr[0] = p;
 			off = 0;
-			UDR0 = ptr[0][off++];
+			if(enable)
+				UDR0 = ptr[0][off++];
 		}
 /*
  * SENT VIA SERIAL PIN 3 (PD1/TXD) 115200 BAUD
