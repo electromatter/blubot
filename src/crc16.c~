@@ -38,7 +38,7 @@ PROGMEM const uint16_t crctab[] =
 	0x8201, 0x42C0, 0x4380, 0x8341, 0x4100, 0x81C1, 0x8081, 0x4040
 };
 
-uint16_t crc16(const volatile char *buf, size_t len)
+uint16_t crc16(const volatile unsigned char *buf, size_t len)
 {
 	uint16_t crc = 0;
 	uint16_t i;
