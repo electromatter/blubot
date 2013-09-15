@@ -1,4 +1,8 @@
 project(blubot)
+cmake_minimum_required(VERSION 2.8)
 
-add_executable(blubot main.cpp)
+include_directories(src/)
 
+aux_source_directory(src/ BLUBOT_SRC)
+
+add_executable(blubot src/ ${BLUBOT_SRC})
