@@ -22,17 +22,10 @@ void pwm_init(void)
 	enable = 0;
 }
 
-void pwm_enable(void)
+void pwm_enable(int en)
 {
 	ATOMIC_BLOCK(ATOMIC_RESTORESTATE) {
-		enable = 1;
-	}
-}
-
-void pwm_disable(void)
-{
-	ATOMIC_BLOCK(ATOMIC_RESTORESTATE) {
-		enable = 0;
+		enable = en;
 	}
 }
 
