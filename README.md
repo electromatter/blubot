@@ -23,15 +23,15 @@ Network Protocol:
  
   id:4
  
-  [DATAPAYLOAD]:arbitrary
+  DATAPAYLOAD:arbitrary
  
  A Controler may enable Blubot by sending a state update atleast every 250ms:
  
-  id:4
- 
-  [enabled]:1
+   id:4
   
-  [CONTROLPAYLOAD]:arbitrary
+   enabled:1
+  
+   CONTROLPAYLOAD:arbitrary
  
  Because the protocol is inherently insecure, Blubot should only be operated on
  a secured network.
