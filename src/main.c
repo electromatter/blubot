@@ -11,14 +11,16 @@
 
 int main(void)
 {
-	/*wait 500 for ethernet*/
 	char packet[1500];
 	char mac[6];
 	char ip[4];
 	char subnet[4];
 	char port[2];
 	char id[4];
+	
+	/*wait 500 for ethernet*/
 	_delay_ms(500);
+	
 	enc_init();
 	twi_init();
 	spi_init();
