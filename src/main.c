@@ -13,11 +13,7 @@
 int main(void)
 {
 	char packet[1500];
-	char mac[6];
-	char ip[4];
-	char subnet[4];
-	char port[2];
-	char id[4];
+	struct cfg_s cfg;
 	
 	/*wait 500 for ethernet*/
 	_delay_ms(500);
@@ -37,13 +33,9 @@ int main(void)
 	 * Port:2
 	 * ID:4
 	 */
-	eeprom_read_block(&cfg.mac,  mac, 6);
-	eeprom_read_block(&cfg.ip,  ip, 4);
-	eeprom_read_block(&cfg.subnet, subnet, 4);
-	eeprom_read_block(&cfg.port, port, 2);
-	eeprom_read_block(&cfg.id, id, 4);
+	eeprom_read_block(&eecfg,  &cfg, sizeof(struct cfg_s));
 	
-	ip_setipmac(ip, subnet, mac);
+	ip_setipmac((char*)cfg.ip, (char*)cfg.subnet, (char*)cfg.mac);
 	
 	while(1) {
 		/*

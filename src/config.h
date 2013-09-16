@@ -3,7 +3,7 @@
 
 #include <avr/eeprom.h>
 
-struct scfg {
+struct cfg_s {
 	uint8_t mac[6];
 	uint8_t ip[4];
 	uint8_t subnet[4];
@@ -11,6 +11,6 @@ struct scfg {
 	int32_t id;
 } __attribute__ ((__packed__));
 
-extern struct scfg EEMEM cfg;
+extern struct cfg_s EEMEM eecfg;
 
 #endif

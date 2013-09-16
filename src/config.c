@@ -11,7 +11,7 @@
 /*ID: 1 (default)*/
 #define ID 	(1)
 
-struct scfg EEMEM cfg = {
+struct cfg_s EEMEM eecfg = {
 	MAC,
 	IP,
 	SUBNET,
