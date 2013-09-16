@@ -58,6 +58,12 @@ int main(void)
 		 * 
 		 * Timeout of 250 ms?
 		 */
+		/* TODO:
+		 *  GYRO
+		 *  TEMP
+		 *  ACCELEROMETER
+		 *  CONTROL STATION
+		 */
 		/*LOOP*/
 	}
 }
