@@ -3,7 +3,7 @@
 #include <util/atomic.h>
 
 volatile char last[4];
-volatile int delta[4];
+volatile int32_t delta[4];
 
 /* 4X encoder count
  * Map encoder values to count delta
@@ -42,7 +42,7 @@ void enc_init(void)
 	delta[3] = 0;
 }
 
-void enc_delta(int *d) {
+void enc_delta(int32_t *d) {
 	ATOMIC_BLOCK(ATOMIC_RESTORESTATE) {
 		d[0] = delta[0];
 		d[1] = delta[1];

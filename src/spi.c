@@ -19,9 +19,19 @@ void spi_init(void)
 	DDRB &= ~0x10;
 }
 
-void spi_end(void)
+void spi_term(void)
 {
 	SPCR &= ~_BV(SPE);
+}
+
+void spi_begin(void)
+{
+	PORTB &= 0xFB;
+}
+
+void spi_end(void)
+{
+	PORTB |=  0x04;
 }
 
 void spi_setendian(uint8_t lsb)
