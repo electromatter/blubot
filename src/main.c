@@ -8,6 +8,7 @@
 #include "spi.h"
 #include "ip.h"
 #include "pwm.h"
+#include "config.h"
 
 int main(void)
 {
@@ -36,11 +37,11 @@ int main(void)
 	 * Port:2
 	 * ID:4
 	 */
-	eeprom_read_block((void*)0,  mac, 6);
-	eeprom_read_block((void*)6,  ip, 4);
-	eeprom_read_block((void*)10, subnet, 4);
-	eeprom_read_block((void*)14, port, 2);
-	eeprom_read_block((void*)16, id, 4);
+	eeprom_read_block(&cfg.mac,  mac, 6);
+	eeprom_read_block(&cfg.ip,  ip, 4);
+	eeprom_read_block(&cfg.subnet, subnet, 4);
+	eeprom_read_block(&cfg.port, port, 2);
+	eeprom_read_block(&cfg.id, id, 4);
 	
 	ip_setipmac(ip, subnet, mac);
 	
